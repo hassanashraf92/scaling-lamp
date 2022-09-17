@@ -15,24 +15,9 @@ class CityTableViewCell: UITableViewCell {
             containerView.layer.backgroundColor = #colorLiteral(red: 0.3906085491, green: 0.2932481766, blue: 0.7138597369, alpha: 1)
         }
     }
-    @IBOutlet weak var currentTempLabel: UILabel! {
+    @IBOutlet weak var cityLabel: UILabel! {
         didSet {
-            currentTempLabel.textColor = .white
-        }
-    }
-    @IBOutlet weak var highestTempLabel: UILabel! {
-        didSet {
-            highestTempLabel.textColor = .gray
-        }
-    }
-    @IBOutlet weak var lowestTempLabel: UILabel! {
-        didSet {
-            lowestTempLabel.textColor = .gray
-        }
-    }
-    @IBOutlet weak var cityNameLabel: UILabel! {
-        didSet {
-            cityNameLabel.textColor = .white
+            cityLabel.textColor = .white
         }
     }
     
@@ -42,9 +27,6 @@ class CityTableViewCell: UITableViewCell {
     }
 
     func config(_ city: String) {
-        self.currentTempLabel.text = "19"
-        self.highestTempLabel.text = "H: 34"
-        self.lowestTempLabel.text = "L: 12"
-        self.cityNameLabel.text = city
+        self.cityLabel.text = city
     }
 }

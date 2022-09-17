@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, Storyboarded {
         }
     }
     
+    var coordinator: AppCoordinator?
     private var cities: [String] = ["Cairo, Egypt", "Tanta, Egypt", "Alexandria, Egypt", "Hurghada, Egypt", "Toronto, Canada", "New York, USA"]
     
     override func viewDidLoad() {
@@ -29,6 +30,10 @@ class HomeViewController: UIViewController, Storyboarded {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.coordinator?.navigateToDetailsViewController(cities[indexPath.row])
+    }
     
 }
 
