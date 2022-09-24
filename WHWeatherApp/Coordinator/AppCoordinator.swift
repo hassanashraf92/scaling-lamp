@@ -18,8 +18,15 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let homeViewController = HomeViewController.instantiate(storyboardName: "Main")
-//        homeViewController.coordinator = self
+        homeViewController.coordinator = self
         self.navigationController.pushViewController(homeViewController, animated: true)
+    }
+    
+    func navigateToDetailsViewController(_ cityName: String) {
+        let viewModel = DetailsViewModel(cityName)
+        let detailsViewController = DetailsViewController.instantiate(storyboardName: "Main")
+        detailsViewController.viewModel = viewModel
+        self.navigationController.pushViewController(detailsViewController, animated: true)
     }
     
     

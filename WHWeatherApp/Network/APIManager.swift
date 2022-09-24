@@ -27,13 +27,17 @@ class APIManager {
   }
   
   func request<T>(type: EndPointType, params: Parameters? = nil, handler: @escaping (T?, _ error: String?) -> ()) where T: Codable {
+      print(type.url)
+      print(params)
+      print(type.httpMethod)
     self.sessionManager.request(type.url,
                                 method: type.httpMethod,
                                 parameters: params,
                                 encoding: type.encoding,
                                 headers: type.headers
     ).validate().responseJSON { (data) in
-      switch data.result {
+        print(data)
+        switch data.result {
       case .success(_):
         let decoder = JSONDecoder()
         if let jsonData = data.data {
@@ -42,6 +46,7 @@ class APIManager {
         }
         break
       case .failure(let error):
+            print(error)
         handler(nil, error.localizedDescription)
         break
       }
