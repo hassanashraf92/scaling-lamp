@@ -17,7 +17,7 @@ enum NetworkEnvironment {
 //MARK: End Point Items
 //Here goes all the end points we are going to use..
 enum EndPointItem {
-  
+    case getCityWeatherData
 }
 
 //MARK: Then we confirm to the protocol we are going to use..
@@ -25,6 +25,8 @@ extension EndPointItem: EndPointType {
 
   var baseURL: String {
     switch self {
+    case .getCityWeatherData:
+        return "https://api.openweathermap.org/data/"
     default:
         return ""
     }
@@ -32,6 +34,8 @@ extension EndPointItem: EndPointType {
   
   var version: String {
     switch self {
+    case .getCityWeatherData:
+        return "2.5/"
     default:
       return ""
     }
@@ -39,6 +43,8 @@ extension EndPointItem: EndPointType {
   
   var path: String {
     switch self {
+    case .getCityWeatherData:
+        return "weather/"
     default:
         return ""
     }
@@ -68,6 +74,8 @@ extension EndPointItem: EndPointType {
   
   var encoding: ParameterEncoding {
     switch self {
+    case .getCityWeatherData:
+        return URLEncoding.default
     default:
       return JSONEncoding.default
     }

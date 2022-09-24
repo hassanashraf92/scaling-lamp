@@ -8,7 +8,7 @@
 import UIKit
 
 class CityTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 8
@@ -23,7 +23,7 @@ class CityTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     func config(_ city: String) {

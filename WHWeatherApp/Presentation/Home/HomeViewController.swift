@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     var coordinator: AppCoordinator?
-    private var cities: [String] = ["Cairo, Egypt", "Tanta, Egypt", "Alexandria, Egypt", "Hurghada, Egypt", "Toronto, Canada", "New York, USA"]
+    private var cities: [String] = ["Cairo", "Tanta", "Alexandria", "Hurghada", "Toronto", "New York"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
